@@ -2,7 +2,7 @@
 
 本文为支付宝小程序直传OSS实现过程的总结(踩过的坑)。
 
-官方文档[支付宝小程序直传实践中](https://help.aliyun.com/document_detail/173882.html?spm=a2c4g.11186623.6.1563.622f677aDo66jq)
+官方文档[支付宝小程序直传实践](https://help.aliyun.com/document_detail/173882.html?spm=a2c4g.11186623.6.1563.622f677aDo66jq)
 
 ## 获取到AccessKeyId、AccessKeyId、Host
 
@@ -86,7 +86,7 @@ npm install --save crypto-js js-base64
 
 ### 遇到的问题
 
-**1.js-base64打包无法上传成功**
+**1. js-base64打包无法上传成功**
 
 在小程序IDE里面上诉代码是可以跑起来的。但是上传的时候问题来了。
 
@@ -108,7 +108,7 @@ npm install --save crypto-js js-base64
 在本地实现base64的编码功能，你可以网上直接搜索。或者直接使用仓库中的`base64.js`文件
 
 
-**上传时报403**
+**2. 上传时报403**
 
 可以具体network中返回的信息对照[官网403错误码表](https://helpcdn.aliyun.com/knowledge_detail/31945.html)排查
 
@@ -117,4 +117,5 @@ npm install --save crypto-js js-base64
 * 小程序后台需要配置安全域名
 * OSS后台要配置跨域
 
+具体的写法可以查看`index.js` 和 `utils/upload.js`等文件
 
