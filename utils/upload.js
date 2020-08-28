@@ -24,9 +24,9 @@ function getFormDataParams() {
     ],
   };
   const policy = Base64.encode(JSON.stringify(policyText)) // policy必须为base64的string。
-  const signature = computeSignature(OSS.AccessKeySecret, policy)
+  const signature = computeSignature(OSSConfig.AccessKeySecret, policy)
   const formData = {
-    OSSAccessKeyId: OSS.AccessKeyId,
+    OSSAccessKeyId: OSSConfig.AccessKeyId,
     signature,
     policy,
     // 'x-oss-security-token': OSS.SecurityToken
